@@ -1,3 +1,12 @@
+<?php 
+  session_start();
+  session_destroy();
+      if(!$_SESSION['name'])
+      {
+        echo "<script>alert('You are not logged in!.'); window.location.href='index.php'</script>";
+      }
+  
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -56,6 +65,17 @@
       <li class="nav-item active">
         <a class="nav-link fonts" href="#contact"><font color="black">Contact Us</font></a>
       </li>
+      <li class="nav-item active">
+      <div class="dropdown ">
+        <a class="dropdown-toggle  nav-link fonts" type="button" style="color: black;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <font color="black"><?php echo $_SESSION['name']; ?></font>
+    </a>
+        <div class="dropdown-menu" aria-labelledby="alert alert-dark">
+          <a class="dropdown-item" href="dashboard.php">Dashboard</a>
+          <a class="dropdown-item" href="logout.php">Logout</a>
+        </div>
+      </div>
+      </li>
     </ul>
 
   </div>
@@ -69,27 +89,9 @@
         <img src="asset/travel.jpg" class="d-block w-100" height="475px" alt="...">
         <div class="carousel-caption d-none d-md-block">
         <h1>Your Journey starts here</h1>
-        <div class="top-right wow fadeIn"><form action="" method="POST">
-          <div class="form-group form-check ">
-            <label for="nameInput"></label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="First Name" required>
-            <label for="lastInput"></label>
-            <input type="text" class="form-control" id="last" name="last" placeholder="Last Name" required>
-            <label for="exampleInputEmail1"></label>
-            <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="E-mail" required>
-            <label for="exampleInputPassword1"></label>
-            <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" required>
-            
-            <div class="adjust" style="margin-top: 20px;">
-              <button type="submit" class="btn btn-primary">SignUp</button>
-            </div>
-
-            </div>
-          </div>
           
 </form>
 </div>
-<div class="text-right mb-5" style="margin-right: 90px;">Already have a account!<button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal" style="padding-left: 2px; padding-bottom:10px;">Login</button></div>
 
       </div>
     </div>

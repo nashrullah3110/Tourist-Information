@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 							{
 								$_SESSION['name']=$row['Name'];
 								$_SESSION['id']=$row['Id'];
-								header('Location:index.html');	
+								header('Location:home.php');	
 							}
 							else
 							{
@@ -212,6 +212,20 @@ mysqli_close($conn);
 {
 	color: red;
 }
+p
+{
+	color: #fff;
+}
+a
+{
+	text-decoration: none;
+	color: lightblue;
+}
+::placeholder
+{
+	color: #fff;
+	opacity: 1;
+}
 	</style>
 
 
@@ -232,18 +246,19 @@ mysqli_close($conn);
         		<h2 class="heading animated slideInRight">Log In</h2>
         			<form action="<?php echo ($_SERVER['PHP_SELF']); ?>" id="form" method="post">
         				<div class="inputBox animated slideInRight">
-        					<input type="email" name="email" required="">
-        					<label>Username</label>
+        					<input type="email" name="email" placeholder="Email" required="">
 
         				</div>	
 
         				<div class="inputBox animated slideInRight">
-        					<input type="Password" name="pass" required="">
-        					<label>Password</label>
+        					<input type="Password" placeholder="Password" name="pass" required="">
 
         				</div>
 
         				<input type="submit" name="" value="LOG IN" class="new animated flipInX">
+						<p>Don't have an account <a href="register.php">Signup</a></p>
+						<p><a href="forgotpassword.php">Forgot Password</a></p>
+						
         			</form>
         	</div>
         </div>

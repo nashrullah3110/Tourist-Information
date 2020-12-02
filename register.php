@@ -14,6 +14,8 @@ else
 		$password=md5($_POST['pass']);
 		$gender=$_POST['gender'];
 		$phone=$_POST['phone'];
+		$question=$_POST['securityquestion'];
+		$answer=$_POST['securityanswer'];
 		$sql="select * from customers where Email='".$email."'";
 		$result= mysqli_query($conn,$sql);
 		if (mysqli_num_rows($result)>0)
@@ -22,9 +24,9 @@ else
 		}
 		else
 		{
-		$sql="INSERT INTO customers(Name,Email,Gender,Password,Phone) VALUES ('$name','$email','$gender','$password','$phone');";
+		$sql="INSERT INTO customers(Name,Email,Gender,Password,Phone,Question,Answer) VALUES ('$name','$email','$gender','$password','$phone','$question','$answer');";
 		if (mysqli_query($conn,$sql)){
-			echo "<script>alert('Successfully Registered.'); window.location.href='login.php'</script>";
+			echo "<script>alert('Successfully Registered.'); window.location.href='index.php'</script>";
 		}
 	}
 	}
@@ -35,7 +37,13 @@ else
  <head>
  	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	<title>Registrations</title>
+	 <title>Registrations</title>
+	 <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="css/bin.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  	<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
  		<link rel="stylesheet" href="css/animate.css">
  		<style type="text/css">
@@ -56,7 +64,7 @@ else
 	animation-duration: 2s;
  	animation-delay: .2s;
 	width: 1000px;
-	margin-top: 70px;
+	margin-top: 50px;
 	min-height: 600px;
 	margin-left: 200px;
 	display: -webkit-flex; /* Safari */		
@@ -95,6 +103,7 @@ else
 .heading
 {
 	margin-left: 50px;
+	margin-top: 20px;
 	color: white;
 	font-family: 'Abel', sans-serif;
 }
@@ -108,8 +117,7 @@ else
 }
 .box .inputBox input
 {
-	padding-right: 100px;
-	padding: 6px 30px;
+	
 	margin-bottom: 30px;
 	font-size: 16px;
 	margin-left: 50px;
@@ -150,7 +158,7 @@ else
 .new
 {
 	margin-left: 50px;
-	margin-top: 20px;
+	margin-top: 10px;
 	animation-delay: 1s;
 	text-transform: uppercase;
 	background: transparent;
@@ -246,11 +254,20 @@ p
 a
 {
 	text-decoration: none;
-	color: lightblue;
+	color: black;
 }
 label
 {
 	margin-left: 45px;
+}
+a:hover
+{
+	text-decoration: none;
+	color:blueviolet;
+}	
+select
+{
+	margin-left: 50px;
 }
 </style>
 
@@ -265,11 +282,13 @@ label
         	
 	<p class="test animated slideInLeft">To stay connected with us please <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp register with your details <br><br><br> <br><br><br><br>
 	</p> <br><br>
+	<p class="ml-5">Already have an account <a href="index.php">Login</a></p>
 
         </div>
         <div class="column bg-alt">
         	<div class="box">
         		<h2 class="heading animated slideInRight">Register With Your Details</h2>
+				<br>
         			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         				<div class="inputBox animated slideInRight">
         					<input type="text" name="name" placeholder="Full Name" required="" >
@@ -300,11 +319,21 @@ label
         				<div class="inputBox animated slideInRight">
         					<input type="text" name="phone" placeholder="Contact No." required="">
 
-        				</div>
+						</div>
+						<select class="inputBox animated slideInRight browser-default custom-select" name="securityquestion">
+  							<option selected>Select one security question</option>
+  							<option value="In which city were you born?">In which city were you born?</option>
+  							<option value="What primary school did you attend?">What primary school did you attend?</option>
+  							<option value="In what town or city did your parents meet?">In what town or city did your parents meet?</option>
+						</select>
+						<br><br>
+						<div class="inputBox animated slideInRight">
+        					<input type="text" name="securityanswer" placeholder="Your Answer" required="">
 
-        				<input type="submit" name="submit" value="Register" class="new animated flipInX">
+						</div>
+						<input type="submit" name="submit" value="Register" class="new animated flipInX">
         				
-        				<p>Already have an account <a href="login.php">Login</a></p>
+        				
         				
         			</form>
         	</div>     	

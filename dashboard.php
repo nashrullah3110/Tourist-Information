@@ -1,5 +1,11 @@
 <?php 
   session_start();
+      if(!$_SESSION['name'])
+      {
+        echo "<script>alert('You are not logged in!.'); window.location.href='index.php'</script>";
+      }
+      
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -109,28 +115,14 @@
 <!-- navbar-->
   <nav style="background-color: blue;" class="navbar navbar-expand-lg navbar-dark navbar-inverse fixed-top navcolor">
     <div class="container-fluid container">
-  <a class="navbar-brand fonts" href="#"><font color="black">TouristInformation</font></a>
+  <a class="navbar-brand fonts" href="home.php"><font color="black">TouristInformation</font></a>
   <button class="navbar-toggler collapsed " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto navbar-right">
-      <li class="nav-item active">
-        <a class="nav-link fonts" href="#home"><font color="black">Home </font></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link fonts" href="#aboutuss"><font color="black">About Us</font></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link fonts" href="#story"><font color="black">Story</font></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link fonts" href="#team"><font color="black">Team</font></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link fonts" href="#contact"><font color="black">Contact Us</font></a>
-      </li>
+      
       <li class="nav-item active">
       <div class="dropdown ">
         <a class="dropdown-toggle  nav-link fonts" type="button" style="color: black;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -149,9 +141,10 @@
 </nav>
 
 <!--Dashboard-->
+<?php echo $_SESSION['imgurl'];?>
 <div class="profile_image">
-    <img src="./asset/profile.png" width="100" height="100"  />
-    <h1>Hi Bharat</h1>
+    <img src="<?php echo $_SESSION['imgurl']; ?>" width="100" height="100"  />
+    <h1>Hi <?php echo $_SESSION['name']; ?></h1>
     <hr id="line">
     <div class="my_profile_button">
         <i class="fa fa-user fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -172,15 +165,15 @@
             <table style="width: 40%">
                 <tr>
                     <td>Name</td>
-                    <td>Bharat</td>
+                    <td><?php echo $_SESSION['name']; ?></td>
                 </tr>
                 <tr>
                     <td>E-mail</td>
-                    <td>bharat.karnani6@gmail.com</td>
+                    <td><?php echo $_SESSION['email']; ?></td>
                 </tr>
                 <tr>
                     <td>Phone-no</td>
-                    <td>9050894694</td>
+                    <td><?php echo $_SESSION['phone']; ?></td>
                 </tr>
                 
             </table>

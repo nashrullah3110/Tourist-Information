@@ -23,7 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 							if ($password===$hash)
 							{
 								$_SESSION['name']=$row['Name'];
+								$_SESSION['email']=$row['Email'];
+								$_SESSION['phone']=$row['Phone'];
 								$_SESSION['id']=$row['Id'];
+								$_SESSION['imgurl']=$row['Img_url'];
 								header('Location:home.php');	
 							}
 							else
@@ -45,7 +48,7 @@ mysqli_close($conn);
  <head>
  	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	<title>Login portal</title>
+ 	<title>Login</title>
  	<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
  		<link rel="stylesheet" href="animate.css">
  		<style type="text/css">

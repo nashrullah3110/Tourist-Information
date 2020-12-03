@@ -1,6 +1,5 @@
 <?php 
   session_start();
-  session_destroy();
       if(!$_SESSION['name'])
       {
         echo "<script>alert('You are not logged in!.'); window.location.href='index.php'</script>";
@@ -11,7 +10,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Website</title>
+    <title>Home</title>
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="css/bin.css" rel="stylesheet">
@@ -88,9 +87,7 @@
     <div class="carousel-item active">
         <img src="asset/travel.jpg" class="d-block w-100" height="475px" alt="...">
         <div class="carousel-caption d-none d-md-block">
-        <h1>Your Journey starts here</h1>
-          
-</form>
+        <h1>Pay Less Travel More</h1>
 </div>
 
       </div>
@@ -195,7 +192,7 @@
           <div class="col-sm-6 storyHeading fonts">Get Your Tickets</div>
           <div class="col-md-6 startedWraper">
             <div id="home">
-            <a data-testid="get_started" href="" class="getStartedBtn fonts">Now</a></div>
+            <a data-testid="get_started" href="activity.php" class="getStartedBtn fonts">Now</a></div>
           </div>
         </div>
       </div>

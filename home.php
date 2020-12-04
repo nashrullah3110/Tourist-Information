@@ -56,7 +56,7 @@
         <a class="nav-link fonts" href="#aboutuss"><font color="black">About Us</font></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link fonts" href="#story"><font color="black">Story</font></a>
+        <a class="nav-link fonts" href="activity.php"><font color="black">Activity</font></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link fonts" href="#team"><font color="black">Team</font></a>
@@ -128,7 +128,7 @@
   <div class="fonts aboutus"><h1>About Us</h1></div>
   <div class="row">
     <div class="col para">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in ultrices mauris. In vulputate dapibus nunc. Vestibulum ultricies luctus ullamcorper. Cras id tempus lorem, posuere ornare sem. Cras euismod ultrices ante, eget efficitur orci rutrum eu. Suspendisse luctus a ipsum sed euismod. Quisque lacinia dui non diam sollicitudin, vehicula elementum neque lacinia. Fusce eget ex id sapien pulvinar luctus. Quisque id odio mollis, cursus lorem ac, commodo nunc.</p>
+      <p>We are here to make your travel smooth. With comfort Travels, all you have to worry about is packing and leave the rest of your trip details for us to manage. With a team of highly enthusiastic people. Whether you are looking for a curated tour package for two or you want to travel with your college, we plan everything for you. Going solo? We will help you in making the best itinerary. And not just this, we design exclusive packages for corporates and inbound tours, providing just the right trip experience to everyone. We plan, we arrange and we manage tip to toe of your trip ensuring that all you are left to do is ‘Enjoy’.</p>
 
     </div>
     <div class="col">
@@ -141,7 +141,7 @@
 <!--Story-->
 <div class="jumbotron" id="story">
 <div class="container fonts" align="center">
-  <div class="ftco-animate"><h1><strong>Our Locations</strong></h1></div>
+  <div class="ftco-animate"><h1><strong>Our Activity</strong></h1></div>
 </div>
 <br>
 <br>
@@ -149,30 +149,30 @@
   <div class="row">
     <div class="col-lg-4 col-sm-6">
       <div class="card wow fadeInUp" style="width: 18rem;">
-  <img src="asset/agra.jpg" class="card-img-top" height="200px"  alt="...">
+  <img src="asset/bungee jumping.jpg" class="card-img-top" height="200px"  alt="...">
   <div class="card-body">
-    <h5 class="card-title">Agra</h5>
-    <p class="card-text">    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquet gravida erat eu cursus. Phasellus risus arcu, suscipit eget nunc ut, ultrices euismod ligula. Mauris suscipit metus non mauris placerat, elementum cursus leo varius. Pellentesque faucibus suscipit leo a tincidunt. Aliquam non blandit ipsum.</span> </p>
+    <h5 class="card-title">Bungee Jumping</h5>
+    <p class="card-text">    <p class="card-text">Bungee jumping is an adventurous sport in which people jump from higher ground such as a bridge with an elastic rope tied to their ankles to stop them from hitting the ground. The rope is designed to stretch, not break. When the rope has stretched all the way, the jumper bounces back up. When people jump they wear safety equipment like helmets and a harness.</span> </p>
   </span> </p>
   </div>
 </div>
 </div>
   <div class="col-lg-4 col-sm-6">
 <div class="card wow fadeInUp" style="width: 18rem;">
-  <img src="asset/kolkata.jpg" class="card-img-top" height="200px" alt="...">
+  <img src="asset/paragliding.jpeg" class="card-img-top" height="200px" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Kolkata</h5>
-    <p class="card-text">    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquet gravida erat eu cursus. Phasellus risus arcu, suscipit eget nunc ut, ultrices euismod ligula. Mauris suscipit metus non mauris placerat, elementum cursus leo varius. Pellentesque faucibus suscipit leo a tincidunt. Aliquam non blandit ipsum.</span> </p>
+    <h5 class="card-title">Paragliding</h5>
+    <p class="card-text">    <p class="card-text">Paragliding is the recreational adventure sport of flying paragliders: lightweight,foot-launched glider aircraft with no rigid primary structure.The pilot sits in a harness or lies supine in a coccoon-like 'speed bag' suspended below a fabric wing. Wing shape is maintained by the suspension lines,the pressure of air entering vents in the front of the wing.</span> </p>
   </span> </p>
   </div>
 </div>
     </div>
     <div class="col-lg-4 col-sm-6">
   <div class="card wow fadeInUp" style="width: 18rem;">
-    <img src="asset/manali.jpg" class="card-img-top" height="200px"  alt="...">
+    <img src="asset/scuba diving.jpg" class="card-img-top" height="200px"  alt="...">
     <div class="card-body">
-      <h5 class="card-title">Manali</h5>
-      <p class="card-text">    <p class="card-text">    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquet gravida erat eu cursus. Phasellus risus arcu, suscipit eget nunc ut, ultrices euismod ligula. Mauris suscipit metus non mauris placerat, elementum cursus leo varius. Pellentesque faucibus suscipit leo a tincidunt. Aliquam non blandit ipsum.</span> </p>
+      <h5 class="card-title">Scuba Diving</h5>
+      <p class="card-text">    <p class="card-text">    <p class="card-text">Scuba diving is a mode of underwater diving where the diver uses a self-contained underwater breathing apparatus,which is completely independent of surface supply, to breathe underwater.Scuba divers carry their own source of breathing gas, usually compressed air,allowing them greater independence and freedom of movement than surface-supplied divers.</span> </p>
     </span> </p>
     </span></p>
     </div>
@@ -189,10 +189,10 @@
     <div class="getStartedWrapper">
       <div class="container">
         <div class="row">
-          <div class="col-sm-6 storyHeading fonts">Get Your Tickets</div>
+          <div class="col-sm-6 storyHeading fonts">Get Your Activity Booked!!</div>
           <div class="col-md-6 startedWraper">
             <div id="home">
-            <a data-testid="get_started" href="activity.php" class="getStartedBtn fonts">Now</a></div>
+            <a data-testid="get_started" href="activity.php" class="getStartedBtn fonts">Book Now</a></div>
           </div>
         </div>
       </div>
@@ -207,12 +207,33 @@
       <div class="flip-box">
   <div class="flip-box-inner">
     <div class="flip-box-front">
-      <img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/salman_660_201219031453.jpg" alt="Paris" style="border-radius: 50%;
+      <img src="img/finance.jpg" alt="Paris" style="border-radius: 50%;
       width: 330px;
       height: 330px;">
     </div>
     <div class="flip-box-back">
-      <h2 style="font-family: 'Dancing Script', cursive;">Bharat Karnani</h2>
+      <h2 style="font-family: 'Dancing Script', cursive;">Mr.Joe</h2>
+      <p style="font-family: 'Shadows Into Light', cursive;">Finance</p>
+      <div>
+      <a href="#"><i class="fa fa-instagram" style="font-size:24px; color: black;"></i></a>
+      <a href="#"><i class="fa fa-facebook-square" style="font-size:24px; color: black;"></i></a>
+      <a href="#"><i class="fa fa-linkedin-square" style="font-size:24px; color: black;"></i></a>
+      <a href="#"><i class="fa fa-google-plus-square" style="font-size:24px; color: black;"></i></a>
+    </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col-lg-4 col-sm-6">
+      <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      <img src="img/coder.jfif" alt="Paris" style="border-radius: 50%;
+      width: 330px;
+      height: 330px;">
+    </div>
+    <div class="flip-box-back">
+      <h2 style="font-family: 'Dancing Script', cursive;">Mrs.Mary</h2>
       <p style="font-family: 'Shadows Into Light', cursive;">Developer</p>
       <div>
       <a href="#"><i class="fa fa-instagram" style="font-size:24px; color: black;"></i></a>
@@ -228,34 +249,13 @@
       <div class="flip-box">
   <div class="flip-box-inner">
     <div class="flip-box-front">
-      <img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/salman_660_201219031453.jpg" alt="Paris" style="border-radius: 50%;
+      <img src="img/developer.jfif" alt="Paris" style="border-radius: 50%;
       width: 330px;
       height: 330px;">
     </div>
     <div class="flip-box-back">
-      <h2 style="font-family: 'Dancing Script', cursive;">Bharat Karnani</h2>
-      <p style="font-family: 'Shadows Into Light', cursive;">Developer</p>
-      <div>
-      <a href="#"><i class="fa fa-instagram" style="font-size:24px; color: black;"></i></a>
-      <a href="#"><i class="fa fa-facebook-square" style="font-size:24px; color: black;"></i></a>
-      <a href="#"><i class="fa fa-linkedin-square" style="font-size:24px; color: black;"></i></a>
-      <a href="#"><i class="fa fa-google-plus-square" style="font-size:24px; color: black;"></i></a>
-    </div>
-    </div>
-  </div>
-</div>
-    </div>
-    <div class="col-lg-4 col-sm-6">
-      <div class="flip-box">
-  <div class="flip-box-inner">
-    <div class="flip-box-front">
-      <img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/salman_660_201219031453.jpg" alt="Paris" style="border-radius: 50%;
-      width: 330px;
-      height: 330px;">
-    </div>
-    <div class="flip-box-back">
-      <h2 style="font-family: 'Dancing Script', cursive;">Bharat Karnani</h2>
-      <p style="font-family: 'Shadows Into Light', cursive;">Developer</p>
+      <h2 style="font-family: 'Dancing Script', cursive;">Mr. Joseph</h2>
+      <p style="font-family: 'Shadows Into Light', cursive;">Marketing</p>
       <div>
       <a href="#"><i class="fa fa-instagram" style="font-size:24px; color: black;"></i></a>
       <a href="#"><i class="fa fa-facebook-square" style="font-size:24px; color: black;"></i></a>
@@ -290,7 +290,8 @@
 
           <div>
             <i class="fa fa-phone"></i>
-            <p>+91 9050894694</p>
+            <p>+91 123456
+            </p>
           </div>
 
         </div>
@@ -300,7 +301,7 @@
         <div class="form wow fadeInRight">
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage"></div>
-          <form action="https://formspree.io/xbjdnwnd" id="contact-form" method="post" role="form" class="contactForm">
+          <form action="#" id="contact-form" method="post" role="form" class="contactForm">
             <div class="form-group">
               <label for="inputName"></label>
               <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required />
@@ -327,7 +328,7 @@
 </section>
 
 <!-- footer-->
-<p align="center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+<p align="center" class="footer-style" style="background: #eee !important; padding: 10px !important; text-align: center !important; margin-bottom: 0 !important;"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 </div>

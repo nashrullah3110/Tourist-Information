@@ -1,5 +1,16 @@
 <?php 
   session_start();
+      if(!$_SESSION['name'])
+      {
+        echo "<script>alert('You are not logged in!.'); window.location.href='index.php'</script>";
+      }
+      $conn=mysqli_connect('localhost','root','','tourist');
+      if(!$conn)
+      {
+        die("connection failed");
+      }
+      
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -33,7 +44,7 @@
       }
       .profile_image img{
           float: left;
-          margin-top: 50px;
+          margin-top: 30px;
           margin-left: 130px;
       }
       .profile_image h1{
@@ -90,10 +101,47 @@
     }
     .booked_history_info{
       margin-top: 10px;
+      width: 60%;
       overflow-x: hidden;
-      overflow-y: scroll;
+      overflow-y: auto;
       margin-right:120px ;
+      height: 220px;
     }
+    .booked
+    {
+      width: 100%;
+    }
+    .trcontainer
+    {
+      border-top: solid;
+      border-bottom: solid;
+      border-width: 1px;
+      border-color: grey;
+    }
+    #collapseExample::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#collapseExample::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#collapseExample::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: grey;
+}
+.error
+{
+
+}
+
     </style>
   </head>
   <body id="home">
@@ -107,30 +155,16 @@
               new WOW().init();
               </script>
 <!-- navbar-->
-  <nav style="background-color: blue;" class="navbar navbar-expand-lg navbar-dark navbar-inverse fixed-top navcolor">
+  <nav style="background-color:  #85f2ec;" class="navbar navbar-expand-lg navbar-dark navbar-inverse fixed-top navcolor">
     <div class="container-fluid container">
-  <a class="navbar-brand fonts" href="#"><font color="black">TouristInformation</font></a>
+  <a class="navbar-brand fonts" href="home.php"><font color="black">TouristInformation</font></a>
   <button class="navbar-toggler collapsed " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto navbar-right">
-      <li class="nav-item active">
-        <a class="nav-link fonts" href="#home"><font color="black">Home </font></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link fonts" href="#aboutuss"><font color="black">About Us</font></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link fonts" href="#story"><font color="black">Story</font></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link fonts" href="#team"><font color="black">Team</font></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link fonts" href="#contact"><font color="black">Contact Us</font></a>
-      </li>
+      
       <li class="nav-item active">
       <div class="dropdown ">
         <a class="dropdown-toggle  nav-link fonts" type="button" style="color: black;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -150,8 +184,8 @@
 
 <!--Dashboard-->
 <div class="profile_image">
-    <img src="./asset/profile.png" width="100" height="100"  />
-    <h1>Hi Bharat</h1>
+    <img src="<?php echo $_SESSION['imgurl']; ?>" width="120" height="120"  />
+    <h1>Hi <?php echo $_SESSION['name']; ?></h1>
     <hr id="line">
     <div class="my_profile_button">
         <i class="fa fa-user fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -172,80 +206,67 @@
             <table style="width: 40%">
                 <tr>
                     <td>Name</td>
-                    <td>Bharat</td>
+                    <td><?php echo $_SESSION['name']; ?></td>
                 </tr>
                 <tr>
                     <td>E-mail</td>
-                    <td>bharat.karnani6@gmail.com</td>
+                    <td><?php echo $_SESSION['email']; ?></td>
                 </tr>
                 <tr>
                     <td>Phone-no</td>
-                    <td>9050894694</td>
+                    <td><?php echo $_SESSION['phone']; ?></td>
                 </tr>
                 
             </table>
         </div>
         <div class="booked_history_info collapse" id="collapseExample">
-          <div class="row">
-            <div class="col-3">
-                <div class="card" style="width: 18rem;">
-                  <div class="card-body">
-                    <h5 class="card-title">Sky Diving</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">12-Dec-2020</h6>
-                    <p class="card-text">Price: Rs. 2200</p>
-                  </div>
-                </div>
+            <div class="row">
+              <table class="booked">
+                <tbody>
+              <?php
+                $custid=$_SESSION['id'];
+                $sql="select * from booked_activities where Cust_Id='".$custid."';";
+                $result=mysqli_query($conn,$sql);
+                if(mysqli_num_rows($result)>0)
+                {
+                  while($row=mysqli_fetch_assoc($result))
+                  {
+                    $date=$row['Date'];
+                    $actid=$row['Act_Id'];
+                    $sql="select * from activities where Act_Id='".$actid."';";
+                    $result1=mysqli_query($conn,$sql);
+                    if (mysqli_num_rows($result1)>0)
+                    {
+                      while($row2=mysqli_fetch_assoc($result1))
+                      {
+                        ?>
+                          <tr class="trcontainer">
+                <td class="imgcontainer">
+                  <img src="<?php echo $row2['Img_url']; ?>" alt="Refresh" style="margin-top: 10px; margin-bottom:10px;" height="120px" width="120px">
+                </td>
+                <td class="details" style="margin-left: -10px;">
+                  <h5><?php echo ucwords($row2['Act_Name']); ?></h5>
+                  <h6>Price: <?php echo $row2['Price']; ?></h6>
+                  <h6>Date: <?php echo $row['Date']; ?></h6>
+                </td>
+                </form>
+              </tr>
+                        <?php
+                      }
+                    }
+                  }
+                }
+                else
+                {
+                  ?>
+
+                  <h3 class="error">No Booking here!</h3>
+                  <?php
+                }
+              ?>
+                </tbody>
+              </table>
             </div>
-            <div class="col-3">
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Sky Diving</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">12-Dec-2020</h6>
-                  <p class="card-text">Price: Rs. 2200</p>
-                </div>
-              </div>
-              
-            </div>
-            <div class="col-3">
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Sky Diving</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">12-Dec-2020</h6>
-                  <p class="card-text">Price: Rs. 2200</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row pt-2">
-            <div class="col-3">
-                <div class="card" style="width: 18rem;">
-                  <div class="card-body">
-                    <h5 class="card-title">Sky Diving</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">12-Dec-2020</h6>
-                    <p class="card-text">Price: Rs. 2200</p>
-                  </div>
-                </div>
-            </div>
-            <div class="col-3">
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Sky Diving</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">12-Dec-2020</h6>
-                  <p class="card-text">Price: Rs. 2200</p>
-                </div>
-              </div>
-              
-            </div>
-            <div class="col-3">
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Sky Diving</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">12-Dec-2020</h6>
-                  <p class="card-text">Price: Rs. 2200</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
     </div>   
 </div>

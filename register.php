@@ -13,6 +13,14 @@ else
 		$email=$_POST['email'];
 		$password=md5($_POST['pass']);
 		$gender=$_POST['gender'];
+		if($gender=='Male')
+		{
+			$imgurl="asset/profile.png";
+		}
+		else
+		{
+			$imgurl="asset/profile-girl.png";
+		}
 		$phone=$_POST['phone'];
 		$question=$_POST['securityquestion'];
 		$answer=$_POST['securityanswer'];
@@ -24,7 +32,7 @@ else
 		}
 		else
 		{
-		$sql="INSERT INTO customers(Name,Email,Gender,Password,Phone,Question,Answer) VALUES ('$name','$email','$gender','$password','$phone','$question','$answer');";
+		$sql="INSERT INTO customers(Name,Email,Gender,Password,Phone,Question,Answer,Img_url) VALUES ('$name','$email','$gender','$password','$phone','$question','$answer','$imgurl');";
 		if (mysqli_query($conn,$sql)){
 			echo "<script>alert('Successfully Registered.'); window.location.href='index.php'</script>";
 		}
@@ -37,7 +45,7 @@ else
  <head>
  	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	 <title>Registrations</title>
+	 <title>Registration</title>
 	 <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="css/bin.css" rel="stylesheet">
@@ -309,7 +317,7 @@ select
         				<div class="inputBox animated slideInRight">
 						<label>Gender</label>
 							<br><br>
-							<input type="radio" name="gender" value="male" required=""><span>Male</span>
+							<input type="radio" name="gender" value="Male" required=""><span>Male</span>
 							<input type="radio" name="gender" value="Female" required=""><span>Female</span>
 							
         					

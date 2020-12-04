@@ -135,10 +135,12 @@ padding: 40px;
   font-family: 'Dancing Script', cursive;
   float: right;
 }
+.para p{
+  margin-top: 90px;
+}
 .carousel-caption{
-  padding-right: 800px;
   padding-bottom: 200px;
-  color: black;
+  color: white;
   font-family: 'Ma Shan Zheng', cursive;
 }
 #contact {
@@ -223,6 +225,12 @@ padding: 40px;
 .site-footer {
   background-color: #111;
   padding: 0;
+}
+
+#contact .footer-style{
+  background: #eee !important;
+  padding: 10px !important;
+  text-align: center !important;
 }
 
 .site-footer h2,

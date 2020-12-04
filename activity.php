@@ -1,5 +1,9 @@
 <?php 
   session_start();
+  if(!$_SESSION['name'])
+      {
+        echo "<script>alert('You are not logged in!.'); window.location.href='index.php'</script>";
+      }
   $conn=mysqli_connect('localhost','root','','tourist');
       if(!$conn)
       {

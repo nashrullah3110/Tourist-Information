@@ -224,12 +224,12 @@ td
                   <h6>Location: <?php echo $row['Location']; ?></h6>
                 </td>
                 <form action="<?php echo ($_SERVER['PHP_SELF']); ?>" method="post">
-                  <td>
+                  <td style="padding-top:35px;">
                       <input type="date" class="date" name="date">
                       <input type="hidden" name="Act_id" value="<?php echo $row['Act_Id'] ?>">
                   </td>
-                  <td>
-                    <button type="submit" class="book">Book</button>
+                  <td class="pl-3">
+                    <button type="submit" name="submit2" value="submit2" class="book">Book</button>
                   </td>
                 </form>
               </tr>
@@ -264,11 +264,11 @@ td
                   <h6>Location: <?php echo $row['Location']; ?></h6>
                 </td>
                 <form action="" method="post">
-                  <td>
+                  <td style="padding-top:35px;">
                       <input type="date" class="date" name="date">
                       <input type="hidden" name="Act_id" value="<?php echo $row['Act_Id'] ?>">
                   </td>
-                  <td>
+                  <td class="pl-3">
                     <button type="submit" name="submit2" value="submit2" class="book">Book</button>
                   </td>
                 </form>

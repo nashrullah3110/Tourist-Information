@@ -1,5 +1,10 @@
 <?php 
   session_start();
+  $conn=mysqli_connect('localhost','root','','tourist');
+      if(!$conn)
+      {
+        die("connection failed");
+      }
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -119,12 +124,7 @@ td
   margin-left: 10%;
   margin-top: 50px;
   height: 400px;
-  overflow-y: scroll;
-  border-style: solid;
-  border-bottom:solid;
-  border-left: none;
-  border-right: none;
-  border-color: grey;
+  overflow-y: auto;
   border-width: 3px;
 }
 #scrollbar::-webkit-scrollbar-track
@@ -145,6 +145,11 @@ td
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: grey;
+}
+.error
+{
+  margin-left: 320px;
+  margin-top: 180px;;
 }
 
     </style>
@@ -193,16 +198,8 @@ td
   <table>
     <tbody>
   <?php 
-      $conn=mysqli_connect('localhost','root','','tourist');
-      if(!$conn)
-      {
-        die("connection failed");
-      }
-      else
-      {
       if (isset($_POST['submit1'])) 
       {
-         echo $_POST['submit1'];
          $search=strtolower($_POST['search']);
          $sql="select * from activities where Act_Name='".$search."'";
          $result=mysqli_query($conn,$sql);
@@ -239,7 +236,7 @@ td
       else
       {
         ?>
-        <h3>Didn't find any activity.</h3>
+        <h3 class="error">Didn't find any activity.</h3>
      <?php 
      }
     }
@@ -277,16 +274,8 @@ td
         }
       }
     }
-  }
   ?>
   <?php
-    $conn=mysqli_connect('localhost','root','','tourist');
-    if(!$conn)
-    {
-      die("connection failed");
-    }
-    else
-    {
       if (isset($_POST['submit2'])) 
        {
          $actid=$_POST['Act_id'];
@@ -311,7 +300,7 @@ td
         echo "<script>alert('Seleceted Date is less than current date!')</script>";
        }
       }
-    }
+      mysqli_close($conn);
   ?>
     </tbody>
   </table>
